@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Weather Dashboard</title>
     <!-- Bootstrap CSS -->
     <link
       rel="stylesheet"
@@ -16,7 +16,54 @@
   </head>
   <body>
     <!-- begin header -->
-    <div class="header"><h1 class="text-center">Weather Dashboard</h1></div>
-    <div class="container"></div>
+    <div class="header"><h1 class="text-center">&#9728 Weather Dashboard &#9729</h1></div>
+    <div class="container">
+      <div class="row">
+        <!-- start of left column "sidebar" -->
+        <div class="col-sm-3" id="sidebar">
+          <form>
+            <div class="form-group">
+              <label for="search-input">Search for a city:</label>
+              <input type="text" class="form-control" id="search-input" />
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+          <br />
+          <hr />
+          <br />
+          <!-- begin div for list of previous searches -->
+          <div >
+            <ul id="prev-searches">
+            </ul>
+          </div>
+        </div>
+            <!-- begin right column with 2 rows -->
+            <div class="col-sm-9">
+                <!-- begin 1st row in right column-->
+                <div class="row" id="city-data">
+                    <div class="col-sm-12">
+                        <h4><span id="city">Osseo</span><span id="date">5/10/10</span><span id="weather-icon">clouds</span></h4>
+                        <p><span id="temp">Temperature: 100 degrees</span></p>
+                        <p><span id="humidity">Humidity: 71%</span></p>
+                        <p><span id="wind-speed">Wind Speed: 100mph</span></p>
+                        <p><span id="uv-index">UV Index: 7.1</span></p>
+                    </div>
+                </div>
+                <!-- begin 2nd row in right column for 5-day forecast -->
+                <div class="row" id="5-day-forecast">
+                    <div class="col-sm-12">
+                        <h4>5 Day Forecast:</h4>
+                        <div class="row">
+                            <div class="col-sm-2" id="day-1">day1</div>
+                            <div class="col-sm-2" id="day-2">day2</div>
+                            <div class="col-sm-2" id="day-3">day3</div>
+                            <div class="col-sm-2" id="day-4">day4</div>
+                            <div class="col-sm-2" id="day-5">day5</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+      </div>
+    </div>
   </body>
 </html>
