@@ -4,6 +4,10 @@
   margin-bottom: 20px;
 }
 
+#sidebar {
+  background-color: #f9aa5518;
+}
+
 #city-data {
   border: 1px solid rgba(83, 74, 74, 0.281);
   border-radius: 10px;
