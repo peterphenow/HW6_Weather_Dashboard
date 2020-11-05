@@ -66,11 +66,13 @@ searchBtn.on("click", function (event) {
       for (let i = 1; i < 6; i++) {
         console.log(response2.daily[i]);
         //setting variables for forecasted days
+        //let degreesF =
         let forecastDate = moment(response2.daily[i].dt * 1000).format("MM/DD/YYYY");
         let forecastIcon = response2.daily[i].weather[0].icon;
         let forecastIconURL = "http://openweathermap.org/img/wn/" + forecastIcon + ".png";
-        let forecastTemp = ((response2.daily[i].temp.day - 273.15) * 1.8 + 32).toFixed(1);
-        let forecastHumidity = response2.daily[i].humidity;
+        let forecastTemp =
+          "Temp: " + ((response2.daily[i].temp.day - 273.15) * 1.8 + 32).toFixed(1) + " \u00B0F";
+        let forecastHumidity = "Humidity: " + response2.daily[i].humidity + "%";
 
         //create elements
         //let forecastBox = $("<div>");
