@@ -72,7 +72,35 @@ searchBtn.on("click", function (event) {
         let forecastTemp = ((response2.daily[i].temp.day - 273.15) * 1.8 + 32).toFixed(1);
         let forecastHumidity = response2.daily[i].humidity;
 
-        console.log(forecastHumidity);
+        //create elements
+        //let forecastBox = $("<div>");
+        let forecastDiv = $("#day-" + [i]);
+        let forecastDateDiv = $("<div>");
+        let forecastImg = $("<img>");
+        let forecastTempDiv = $("<div>");
+        let forecastHumidityDiv = $("<div>");
+        //assign classes
+        //forecastBox.addClass("forecast");
+        forecastDateDiv.addClass("forecast-date" + [i]);
+        forecastImg.addClass("forecast-img" + [i]);
+        forecastTempDiv.addClass("forecast-temp" + [i]);
+        forecastHumidityDiv.addClass("forecast-humidity" + [i]);
+        //append divs to fill inside box
+        forecastDiv.append(forecastDateDiv);
+        forecastDiv.append(forecastImg);
+        forecastDiv.append(forecastTempDiv);
+        forecastDiv.append(forecastHumidityDiv);
+        //console.log(forecastBox);
+        //populate forecastBox with info
+        $(".forecast-date" + [i]).text(forecastDate);
+        $(".forecast-img" + [i]).attr("src", forecastIconURL);
+        $(".forecast-temp" + [i]).text(forecastTemp);
+        $(".forecast-humidity" + [i]).text(forecastHumidity);
+
+        //location to append forecastBoxes to
+        //let fiveDayForecast = $("#day-" + [i]);
+        //console.log(fiveDayForecast);
+        //fiveDayForecast.append(forecastBox);
       }
     });
   });
