@@ -19,7 +19,7 @@ searchBtn.on("click", function (event) {
     method: "GET",
   }).then(function (response) {
     //log the resulting object
-    console.log(response);
+    //console.log(response);
     //create lat and lon variables for another API call
     let lat = response.coord.lat;
     let lon = response.coord.lon;
@@ -56,11 +56,24 @@ searchBtn.on("click", function (event) {
       url: queryURL2,
       method: "GET",
     }).then(function (response2) {
-      console.log(response2);
+      //console.log(response2);
       //create and set UV Index variable
       let uvi = response2.current.uvi;
       //transfer to HTML
       $("#uv-index").text("UV Index: " + uvi);
+
+      //create for loop for 5 day forecast
+      for (let i = 1; i < 6; i++) {
+        console.log(response2.daily[i]);
+        //setting variables for forecasted days
+        let forecastDate = moment(response2.daily[i].dt * 1000).format("MM/DD/YYYY");
+        let forecastIcon = response2.daily[i].weather[0].icon;
+        let forecastIconURL = "http://openweathermap.org/img/wn/" + forecastIcon + ".png";
+        let forecastTemp = ((response2.daily[i].temp.day - 273.15) * 1.8 + 32).toFixed(1);
+        let forecastHumidity = response2.daily[i].humidity;
+
+        console.log(forecastHumidity);
+      }
     });
   });
 });
