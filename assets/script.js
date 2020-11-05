@@ -85,6 +85,8 @@ searchBtn.on("click", function (event) {
         forecastImg.addClass("forecast-img" + [i]);
         forecastTempDiv.addClass("forecast-temp" + [i]);
         forecastHumidityDiv.addClass("forecast-humidity" + [i]);
+        //clear any previous data
+        forecastDiv.empty();
         //append divs to fill inside box
         forecastDiv.append(forecastDateDiv);
         forecastDiv.append(forecastImg);
