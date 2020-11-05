@@ -13,10 +13,6 @@
     />
     <!-- Custom CSS -->
     <link rel="stylesheet" href="./assets/style.css" />
-    <!-- jQuery CDN -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <!-- Custom JavaScript -->
-    <script src="./assets/script.js"></script>
   </head>
   <body>
     <!-- begin header -->
@@ -41,9 +37,9 @@
             </ul>
           </div>
         </div>
-            <!-- begin right column with 2 rows -->
-            <div class="col-sm-9">
-                <!-- begin 1st row in right column-->
+        <!-- begin right column with 2 rows -->
+        <div class="col-sm-9">
+          <!-- begin 1st row in right column-->
                 <div class="row" id="city-data">
                     <div class="col-sm-12">
                         <h4><span id="city">Osseo</span><span id="date">5/10/10</span><span id="weather-icon">clouds</span></h4>
@@ -52,11 +48,11 @@
                         <p><span id="wind-speed">Wind Speed: 100mph</span></p>
                         <p><span id="uv-index">UV Index: 7.1</span></p>
                     </div>
-                </div>
+                  </div>
                 <!-- begin 2nd row in right column for 5-day forecast -->
                 <div class="row" id="5-day-forecast">
                     <div class="col-sm-12">
-                        <h4>5 Day Forecast:</h4>
+                      <h4>5 Day Forecast:</h4>
                         <div class="row">
                             <div class="col-sm-2" id="day-1">day1</div>
                             <div class="col-sm-2" id="day-2">day2</div>
@@ -64,12 +60,15 @@
                             <div class="col-sm-2" id="day-4">day4</div>
                             <div class="col-sm-2" id="day-5">day5</div>
                         </div>
-                    </div>
+                      </div>
                 </div>
+              </div>
             </div>
-      </div>
-    </div>
+          </div>
 
-    
+          <!-- jQuery CDN -->
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+          <!-- Custom JavaScript -->
+          <script src="./assets/script.js"></script>
   </body>
 </html>

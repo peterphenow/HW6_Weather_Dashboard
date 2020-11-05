@@ -8,7 +8,7 @@ let citySearch = "";
 searchBtn.on("click", function (event) {
   event.preventDefault();
   citySearch = $("#search-input").val().trim();
-  console.log(citySearch);
+  return citySearch;
 });
 
 // Here we are building the URL we need to query the database
