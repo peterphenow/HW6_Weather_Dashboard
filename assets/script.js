@@ -5,9 +5,29 @@ let APIKey = "e01400ff6ef570d52c47db7d01afc1b6";
 let searchBtn = $("#search-btn");
 let citySearch = "";
 
+//create variable for where to place previous cities searched
+let prevSearches = $("#prev-searches");
+
+//saves cities as an array to local storage
+function saveCities() {
+  localStorage.setItem("cities", citySearch);
+}
+
+//
+function renderPrevCities() {
+  let prevSearchesParsed = localStorage.getItem("cities");
+  let liEl = $("<li>");
+  liEl.text(prevSearchesParsed);
+  prevSearches.append(liEl);
+}
+
 searchBtn.on("click", function (event) {
   event.preventDefault();
   citySearch = $("#search-input").val().trim();
+
+  //call functions to save cities and render to list below search
+  saveCities();
+  renderPrevCities();
 
   // Here we are building the URL we need to query the database
   let queryURL1 =
