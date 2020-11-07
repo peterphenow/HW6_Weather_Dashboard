@@ -17,8 +17,11 @@ function saveCities() {
 function renderPrevCities() {
   let prevSearchesParsed = localStorage.getItem("cities");
   let liEl = $("<li>");
+  liEl.addClass("prev-city");
   liEl.text(prevSearchesParsed);
-  prevSearches.append(liEl);
+  prevSearches.prepend(liEl);
+  //add on click functionality here to take text and rerun search???
+  //let searched = $(".prev-city");
 }
 
 searchBtn.on("click", function (event) {
@@ -50,7 +53,7 @@ searchBtn.on("click", function (event) {
     //create humidity and wind variables
     let humidity = response.main.humidity;
     let wind = response.wind.speed;
-    console.log(lat, lon, weatherIcon, tempF, humidity, wind);
+    //console.log(lat, lon, weatherIcon, tempF, humidity, wind);
 
     // Create CODE HERE to transfer content to HTML
     $("#city").text(citySearch);
@@ -84,7 +87,7 @@ searchBtn.on("click", function (event) {
 
       //create for loop for 5 day forecast
       for (let i = 1; i < 6; i++) {
-        console.log(response2.daily[i]);
+        //console.log(response2.daily[i]);
         //setting variables for forecasted days
         //let degreesF =
         let forecastDate = moment(response2.daily[i].dt * 1000).format("MM/DD/YYYY");
