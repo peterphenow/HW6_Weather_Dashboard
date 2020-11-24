@@ -19,3 +19,7 @@ I began this homework thinking it wouldn't be too difficult, but came to realize
 ### **Credits**
 
 [OpenWeather API](https://openweathermap.org/api)
+
+### **License**
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
